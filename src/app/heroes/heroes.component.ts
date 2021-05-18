@@ -9,16 +9,22 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   hero: IHero = {
     id: 1,
     name: 'Tim',
   };
 
   heroes = HEROES;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+
+  selectedHero: IHero = this.hero;
+  onSelect(hero: IHero) {
+    this.selectedHero = hero;
+  };
 
 }

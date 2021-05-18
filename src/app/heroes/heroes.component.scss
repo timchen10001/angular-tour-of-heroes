@@ -1,0 +1,9 @@
+.heroes {
+  &__buttons {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: pink;
+  }
+}
