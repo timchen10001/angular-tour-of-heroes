@@ -17,14 +17,28 @@
   <li
     class="heroes__buttons"
     *ngFor="let hero of heroes"
-    (click)="onSelect(hero)">
+    (click)="onSelect(hero)"
+  >
     {{ hero.name }}
   </li>
 </ul>
 
-<h2>{{selectedHero?.name | uppercase}} Details</h2>
-<div><span>id: </span>{{selectedHero?.id}}</div>
+<h2>{{ selectedHero?.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ selectedHero?.id }}</div>
 <div>
   <label for="hero-name">Hero name: </label>
-  <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name" />
+</div>
+
+ <!-- two-way-binding + keydown handling -->
+<input
+  id="input-2"
+  type="text"
+  [(ngModel)]="inputTarget"
+  (click)="greeting()"
+  (keydown)="onKeyDown($event)"
+/>
+
+<div *ngIf="hasInputTarget">
+  {{ inputTarget }}
 </div>
