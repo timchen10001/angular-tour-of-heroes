@@ -27,4 +27,15 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   };
 
+  inputTarget: string = "";
+  hasInputTarget: boolean = false;
+  public greeting() {
+    console.log(this.inputTarget);
+  };
+
+  public onKeyDown(e: any) {
+    console.log('changing!');
+    this.hasInputTarget = !!e.target.value;
+  };
+
 }
